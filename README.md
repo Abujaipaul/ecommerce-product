@@ -29,7 +29,8 @@ Users should be able to:
 
 
 ### Links
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Abujaipaul/ecommerce-product](https://github.com/Abujaipaul/ecommerce-product)
+- Live Site URL: [https://ecommerce-product123.netlify.app/](https://ecommerce-product123.netlify.app/)
 
 
 ### Built with
