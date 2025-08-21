@@ -1,4 +1,4 @@
-import './Lightbox.css';
+import './LightBox.css';
 import { product } from '../../data';
 import closeIcon from '../../assets/images/icon-close.svg';
 import nextIcon from '../../assets/images/icon-next.svg';
