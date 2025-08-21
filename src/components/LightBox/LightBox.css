@@ -1,0 +1,118 @@
+/* src/components/Lightbox/Lightbox.css */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-75-opacity);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 24px;
+}
+
+.lightbox-close-btn img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s;
+}
+
+.lightbox-close-btn:hover img {
+  /* This creates the orange hover effect on the white SVG */
+  filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(330deg);
+}
+
+.lightbox-image-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.lightbox-main-image {
+  width: 550px;
+  height: 550px;
+  border-radius: 15px;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lightbox-nav-btn.prev {
+  left: -28px;
+}
+
+.lightbox-nav-btn.next {
+  right: -28px;
+}
+
+.lightbox-nav-btn:hover img {
+  /* This creates the orange hover effect on the arrow SVGs */
+  filter: brightness(0) sepia(1) saturate(10000%) hue-rotate(330deg);
+}
+
+.lightbox-thumbnails {
+  display: flex;
+  gap: 31px;
+  justify-content: center;
+}
+
+.lightbox-thumbnail-container {
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  background-color: var(--white); /* White background for the border effect */
+  cursor: pointer;
+}
+
+.lightbox-thumbnail-container img {
+  width: 100%;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+
+.lightbox-thumbnail-container.active-thumbnail {
+  border: 2px solid var(--orange);
+}
+
+.lightbox-thumbnail-container.active-thumbnail img {
+  opacity: 0.4;
+}
+
+.lightbox-thumbnail-container:not(.active-thumbnail):hover img {
+  opacity: 0.6;
+}
+
+/* --- NEW RESPONSIVE STYLE --- */
+/* Hide the entire lightbox on mobile devices */
+@media (max-width: 768px) {
+  .lightbox-overlay {
+    display: none;
+  }
+}

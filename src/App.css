@@ -1,0 +1,19 @@
+/* src/App.css */
+.product-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 125px;
+  padding: 90px 48px;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+/* responsive styles */
+@media (max-width: 768px) {
+  .product-page-container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 0;
+    gap: 24px;
+  }
+}

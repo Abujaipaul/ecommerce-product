@@ -1,0 +1,130 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 112px;
+  border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.header__left, .header__right, .header__nav-desktop ul {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 56px;
+}
+
+/* The selector to match the className in the TSX file */
+.header__nav-desktop ul {
+  list-style: none; 
+  gap: 32px;
+}
+
+/* The selector to match the className in the TSX file */
+.header__nav-desktop a {
+  text-decoration: none;
+  color: var(--dark-grayish-blue);
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.header__nav-desktop a:hover {
+  color: var(--very-dark-blue);
+}
+
+.header__nav-desktop a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--orange);
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.header__nav-desktop a:hover::after {
+  transform: scaleX(1);
+}
+
+.header__cart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 46px;
+}
+
+.header__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.header__avatar:hover {
+  border-color: var(--orange);
+}
+
+.header__cart-container {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: 35px;
+  background-color: var(--orange);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 7px;
+  padding: 1px 7px;
+}
+
+.header__menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+  .header {
+    height: 68px;
+    border-bottom: none;
+    padding: 0 24px;
+  }
+
+  .header__nav-desktop {
+    display: none; /* This hides the desktop nav on mobile */
+  }
+
+  .header__menu-btn {
+    display: block;
+  }
+
+  .header__logo {
+    margin-right: 0;
+  }
+
+  .header__avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__cart-btn {
+    margin-right: 22px;
+  }
+
+  .cart-dropdown {
+    width: calc(100vw - 16px);
+    top: 84px;
+    right: -16px;
+  }
+}
